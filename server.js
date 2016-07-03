@@ -1,6 +1,7 @@
 var express = require("express");
 var open = require("open");
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.get('/',function(req,res) {
 	res.sendFile(__dirname + '/index.html');
@@ -32,8 +33,8 @@ app.get('/timestamp/:param',function(req,res) {
 
 });
 
-app.listen("3000",function() {
-	var url = "http://localhost:3000";
+app.listen(port,function() {
+	var url = "http://localhost:"+port;
 	console.log("MAGIC HAPPENING @ " + url);
 	open(url);
 });
