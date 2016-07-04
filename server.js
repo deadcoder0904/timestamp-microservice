@@ -7,6 +7,8 @@ app.get('/',function(req,res) {
 	res.sendFile(__dirname + '/index.html');
 });
 
+app.use(express.static(__dirname + "/public"));
+
 app.get('/timestamp/:param',function(req,res) {
 	var param = req.params.param;
 	var formattedDate;
